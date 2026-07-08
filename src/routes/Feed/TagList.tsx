@@ -1,7 +1,6 @@
 import styled from "@emotion/styled"
 import { useRouter } from "next/router"
 import React from "react"
-import { Emoji } from "src/components/Emoji"
 import { useTagsQuery } from "src/hooks/useTagsQuery"
 
 type Props = {}
@@ -12,7 +11,6 @@ const TagList: React.FC<Props> = () => {
   const data = useTagsQuery()
 
   const handleClickTag = (value: any) => {
-    // delete
     if (currentTag === value) {
       router.push({
         query: {
@@ -20,9 +18,7 @@ const TagList: React.FC<Props> = () => {
           tag: undefined,
         },
       })
-    }
-    // add
-    else {
+    } else {
       router.push({
         query: {
           ...router.query,
@@ -34,9 +30,7 @@ const TagList: React.FC<Props> = () => {
 
   return (
     <StyledWrapper>
-      <div className="top">
-        <Emoji>🏷️</Emoji> Tags
-      </div>
+      <div className="top">Tags</div>
       <div className="list">
         {Object.keys(data).map((key) => (
           <a
@@ -97,14 +91,14 @@ const StyledWrapper = styled.div`
       cursor: pointer;
 
       :hover {
-        background-color: ${({ theme }) => theme.colors.gray4};
+        background-color: #111827;
       }
       &[data-active="true"] {
         color: ${({ theme }) => theme.colors.gray12};
-        background-color: ${({ theme }) => theme.colors.gray4};
+        background-color: #111827;
 
         :hover {
-          background-color: ${({ theme }) => theme.colors.gray4};
+          background-color: #111827;
         }
       }
     }

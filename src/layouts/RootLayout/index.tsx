@@ -110,7 +110,7 @@ const StyledSky = styled.div`
     opacity: 0;
     pointer-events: auto;
     transform: translate3d(0, 0, 0);
-    animation-timing-function: ease-out;
+    animation-timing-function: cubic-bezier(0.16, 0.84, 0.44, 1);
     animation-iteration-count: infinite;
 
     &::before {
@@ -205,13 +205,17 @@ const StyledSky = styled.div`
     1% {
       opacity: 0.85;
     }
+    4.2% {
+      opacity: 0.72;
+      transform: translate3d(-36vw, 10vh, 0);
+    }
     7.6% {
       opacity: 0;
-      transform: translate3d(-54vw, 38vh, 0);
+      transform: translate3d(-72vw, 24vh, 0);
     }
     100% {
       opacity: 0;
-      transform: translate3d(-54vw, 38vh, 0);
+      transform: translate3d(-72vw, 24vh, 0);
     }
   }
 
@@ -223,13 +227,17 @@ const StyledSky = styled.div`
     1% {
       opacity: 0.85;
     }
+    3.5% {
+      opacity: 0.72;
+      transform: translate3d(-36vw, 10vh, 0);
+    }
     6.1% {
       opacity: 0;
-      transform: translate3d(-54vw, 38vh, 0);
+      transform: translate3d(-72vw, 24vh, 0);
     }
     100% {
       opacity: 0;
-      transform: translate3d(-54vw, 38vh, 0);
+      transform: translate3d(-72vw, 24vh, 0);
     }
   }
 
@@ -241,13 +249,17 @@ const StyledSky = styled.div`
     1% {
       opacity: 0.85;
     }
+    2.8% {
+      opacity: 0.72;
+      transform: translate3d(-36vw, 10vh, 0);
+    }
     4.7% {
       opacity: 0;
-      transform: translate3d(-54vw, 38vh, 0);
+      transform: translate3d(-72vw, 24vh, 0);
     }
     100% {
       opacity: 0;
-      transform: translate3d(-54vw, 38vh, 0);
+      transform: translate3d(-72vw, 24vh, 0);
     }
   }
 
@@ -259,13 +271,17 @@ const StyledSky = styled.div`
     1% {
       opacity: 0.85;
     }
+    2.5% {
+      opacity: 0.72;
+      transform: translate3d(-36vw, 10vh, 0);
+    }
     4.1% {
       opacity: 0;
-      transform: translate3d(-54vw, 38vh, 0);
+      transform: translate3d(-72vw, 24vh, 0);
     }
     100% {
       opacity: 0;
-      transform: translate3d(-54vw, 38vh, 0);
+      transform: translate3d(-72vw, 24vh, 0);
     }
   }
 
@@ -277,13 +293,17 @@ const StyledSky = styled.div`
     1% {
       opacity: 0.85;
     }
+    2.3% {
+      opacity: 0.72;
+      transform: translate3d(-36vw, 10vh, 0);
+    }
     3.6% {
       opacity: 0;
-      transform: translate3d(-54vw, 38vh, 0);
+      transform: translate3d(-72vw, 24vh, 0);
     }
     100% {
       opacity: 0;
-      transform: translate3d(-54vw, 38vh, 0);
+      transform: translate3d(-72vw, 24vh, 0);
     }
   }
 

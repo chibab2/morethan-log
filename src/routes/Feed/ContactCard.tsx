@@ -7,14 +7,11 @@ import {
   AiOutlineMail,
 } from "react-icons/ai"
 import { CONFIG } from "site.config"
-import { Emoji } from "src/components/Emoji"
 
 const ContactCard: React.FC = () => {
   return (
     <>
-      <StyledTitle>
-        <Emoji>💬</Emoji> Contact
-      </StyledTitle>
+      <StyledTitle>Contact</StyledTitle>
       <StyledWrapper>
         {CONFIG.profile.github && (
           <a
@@ -73,8 +70,7 @@ const StyledWrapper = styled.div`
   padding: 0.25rem;
   flex-direction: column;
   border-radius: 1rem;
-  background-color: ${({ theme }) =>
-    theme.scheme === "light" ? "white" : theme.colors.gray4};
+  background-color: #111827;
   a {
     display: flex;
     padding: 0.75rem;
@@ -86,7 +82,7 @@ const StyledWrapper = styled.div`
 
     :hover {
       color: ${({ theme }) => theme.colors.gray12};
-      background-color: ${({ theme }) => theme.colors.gray5};
+      background-color: rgba(255, 255, 255, 0.08);
     }
     .icon {
       font-size: 1.5rem;
