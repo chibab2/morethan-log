@@ -12,4 +12,6 @@ const Logo = () => {
 
 export default Logo
 
-const StyledWrapper = styled(Link)``
+const StyledWrapper = styled(Link)`
+  color: rgba(248, 250, 252, 0.95);
+`
