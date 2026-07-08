@@ -27,13 +27,13 @@ export const Global = () => {
             radial-gradient(circle at 39% 24%, rgba(255, 255, 255, 0.70) 0 1px, transparent 3px),
             radial-gradient(circle at 46% 28%, rgba(255, 255, 255, 0.85) 0 1px, transparent 3px),
             radial-gradient(circle at 58% 10%, rgba(255, 255, 255, 0.50) 0 1px, transparent 3px),
-            radial-gradient(circle at 72% 16%, rgba(255, 255, 255, 0.85) 0 1px, transparent 4px),
+            radial-gradient(circle at 72% 16%, rgba(255, 255, 255, 0.85) 0 1px, transparent 3px),
             radial-gradient(circle at 88% 26%, rgba(255, 255, 255, 0.70) 0 1px, transparent 3px),
             radial-gradient(circle at 95% 11%, rgba(255, 255, 255, 0.70) 0 1px, transparent 3px),
-            radial-gradient(circle at 84% 54%, rgba(255, 255, 255, 0.85) 0 1px, transparent 4px),
+            radial-gradient(circle at 84% 54%, rgba(255, 255, 255, 0.85) 0 1px, transparent 3px),
             radial-gradient(circle at 9% 62%, rgba(255, 255, 255, 0.50) 0 1px, transparent 3px),
             radial-gradient(circle at 19% 88%, rgba(255, 255, 255, 0.70) 0 1px, transparent 3px),
-            radial-gradient(circle at 28% 78%, rgba(255, 255, 255, 0.85) 0 1px, transparent 4px),
+            radial-gradient(circle at 28% 78%, rgba(255, 255, 255, 0.85) 0 1px, transparent 3px),
             radial-gradient(circle at 41% 92%, rgba(255, 255, 255, 0.70) 0 1px, transparent 3px),
             radial-gradient(circle at 53% 86%, rgba(255, 255, 255, 0.70) 0 1px, transparent 3px),
             radial-gradient(circle at 66% 93%, rgba(255, 255, 255, 0.50) 0 1px, transparent 3px),
@@ -65,81 +65,69 @@ export const Global = () => {
 
         body::before {
           background:
-            radial-gradient(circle at 14% 36%, rgba(255, 255, 255, 0.85) 0 1px, transparent 4px),
-            radial-gradient(circle at 24% 48%, rgba(255, 255, 255, 0.50) 0 1px, transparent 4px),
-            radial-gradient(circle at 33% 39%, rgba(255, 255, 255, 0.70) 0 1px, transparent 4px),
-            radial-gradient(circle at 42% 34%, rgba(255, 255, 255, 0.85) 0 1px, transparent 5px),
-            radial-gradient(circle at 51% 51%, rgba(255, 255, 255, 0.70) 0 1px, transparent 4px),
-            radial-gradient(circle at 57% 44%, rgba(255, 255, 255, 0.70) 0 1px, transparent 4px),
-            radial-gradient(circle at 69% 38%, rgba(255, 255, 255, 0.50) 0 1px, transparent 4px),
-            radial-gradient(circle at 79% 34%, rgba(255, 255, 255, 0.85) 0 1px, transparent 4px),
-            radial-gradient(circle at 64% 72%, rgba(255, 255, 255, 0.85) 0 1px, transparent 5px),
-            radial-gradient(circle at 12% 58%, rgba(255, 255, 255, 0.85) 0 1px, transparent 5px),
-            radial-gradient(circle at 26% 69%, rgba(255, 255, 255, 0.70) 0 1px, transparent 4px),
-            radial-gradient(circle at 38% 66%, rgba(255, 255, 255, 0.70) 0 1px, transparent 4px),
-            radial-gradient(circle at 49% 74%, rgba(255, 255, 255, 0.50) 0 1px, transparent 4px),
-            radial-gradient(circle at 84% 63%, rgba(255, 255, 255, 0.70) 0 1px, transparent 4px),
-            radial-gradient(circle at 91% 68%, rgba(255, 255, 255, 0.85) 0 1px, transparent 4px);
+            radial-gradient(circle at 14% 36%, rgba(255, 255, 255, 0.85) 0 1px, transparent 3px),
+            radial-gradient(circle at 24% 48%, rgba(255, 255, 255, 0.50) 0 1px, transparent 2px),
+            radial-gradient(circle at 33% 39%, rgba(255, 255, 255, 0.70) 0 1px, transparent 3px),
+            radial-gradient(circle at 42% 34%, rgba(255, 255, 255, 0.85) 0 1px, transparent 3px),
+            radial-gradient(circle at 51% 51%, rgba(255, 255, 255, 0.70) 0 1px, transparent 2px),
+            radial-gradient(circle at 57% 44%, rgba(255, 255, 255, 0.70) 0 1px, transparent 3px),
+            radial-gradient(circle at 69% 38%, rgba(255, 255, 255, 0.50) 0 1px, transparent 2px),
+            radial-gradient(circle at 79% 34%, rgba(255, 255, 255, 0.85) 0 1px, transparent 3px),
+            radial-gradient(circle at 64% 72%, rgba(255, 255, 255, 0.85) 0 1px, transparent 3px),
+            radial-gradient(circle at 12% 58%, rgba(255, 255, 255, 0.85) 0 1px, transparent 3px),
+            radial-gradient(circle at 26% 69%, rgba(255, 255, 255, 0.70) 0 1px, transparent 2px),
+            radial-gradient(circle at 38% 66%, rgba(255, 255, 255, 0.70) 0 1px, transparent 3px),
+            radial-gradient(circle at 49% 74%, rgba(255, 255, 255, 0.50) 0 1px, transparent 2px),
+            radial-gradient(circle at 84% 63%, rgba(255, 255, 255, 0.70) 0 1px, transparent 3px),
+            radial-gradient(circle at 91% 68%, rgba(255, 255, 255, 0.85) 0 1px, transparent 3px);
           opacity: 0.85;
-          animation: starTwinkle 5s ease-in-out infinite;
+          animation: starTwinkle 8s steps(1, end) infinite;
         }
 
         body::after {
           background:
             radial-gradient(circle at 6% 42%, rgba(255, 255, 255, 0.50) 0 1px, transparent 3px),
-            radial-gradient(circle at 17% 72%, rgba(255, 255, 255, 0.85) 0 1px, transparent 4px),
+            radial-gradient(circle at 17% 72%, rgba(255, 255, 255, 0.85) 0 1px, transparent 3px),
             radial-gradient(circle at 29% 31%, rgba(255, 255, 255, 0.70) 0 1px, transparent 3px),
             radial-gradient(circle at 34% 54%, rgba(255, 255, 255, 0.85) 0 1px, transparent 3px),
-            radial-gradient(circle at 47% 18%, rgba(255, 255, 255, 0.85) 0 1px, transparent 4px),
+            radial-gradient(circle at 47% 18%, rgba(255, 255, 255, 0.85) 0 1px, transparent 3px),
             radial-gradient(circle at 59% 61%, rgba(255, 255, 255, 0.70) 0 1px, transparent 3px),
             radial-gradient(circle at 68% 26%, rgba(255, 255, 255, 0.50) 0 1px, transparent 3px),
-            radial-gradient(circle at 73% 47%, rgba(255, 255, 255, 0.85) 0 1px, transparent 4px),
+            radial-gradient(circle at 73% 47%, rgba(255, 255, 255, 0.85) 0 1px, transparent 3px),
             radial-gradient(circle at 82% 14%, rgba(255, 255, 255, 0.70) 0 1px, transparent 3px),
             radial-gradient(circle at 89% 43%, rgba(255, 255, 255, 0.85) 0 1px, transparent 3px),
-            radial-gradient(circle at 94% 78%, rgba(255, 255, 255, 0.85) 0 1px, transparent 4px);
+            radial-gradient(circle at 94% 78%, rgba(255, 255, 255, 0.85) 0 1px, transparent 3px);
           opacity: 0.70;
-          animation: starPulse 5s ease-in-out infinite;
+          animation: starPulse 8s steps(1, end) infinite;
         }
 
         @keyframes starTwinkle {
           0% {
-            filter: brightness(0.65);
             opacity: 0.50;
           }
-          38% {
-            filter: brightness(1.7);
+          49.99% {
+            opacity: 0.50;
+          }
+          50% {
             opacity: 0.85;
           }
-          62% {
-            filter: brightness(0.8);
-            opacity: 0.50;
-          }
           100% {
-            filter: brightness(1.25);
-            opacity: 0.70;
+            opacity: 0.85;
           }
         }
 
         @keyframes starPulse {
           0% {
-            filter: brightness(0.55);
             opacity: 0.50;
           }
-          28% {
-            filter: brightness(1.5);
-            opacity: 0.85;
-          }
-          52% {
-            filter: brightness(0.7);
+          49.99% {
             opacity: 0.50;
           }
-          76% {
-            filter: brightness(1.9);
+          50% {
             opacity: 0.85;
           }
           100% {
-            filter: brightness(0.75);
-            opacity: 0.70;
+            opacity: 0.85;
           }
         }
 
