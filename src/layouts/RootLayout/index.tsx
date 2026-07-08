@@ -185,7 +185,7 @@ const StyledSky = styled.div`
     1% {
       opacity: 0.85;
     }
-    7.6% {
+    21.7% {
       opacity: 0;
       transform: translate3d(-54vw, 38vh, 0);
     }
@@ -203,7 +203,7 @@ const StyledSky = styled.div`
     1% {
       opacity: 0.85;
     }
-    6.1% {
+    17.2% {
       opacity: 0;
       transform: translate3d(-54vw, 38vh, 0);
     }
@@ -221,7 +221,7 @@ const StyledSky = styled.div`
     1% {
       opacity: 0.85;
     }
-    4.7% {
+    13.5% {
       opacity: 0;
       transform: translate3d(-54vw, 38vh, 0);
     }
@@ -239,7 +239,7 @@ const StyledSky = styled.div`
     1% {
       opacity: 0.85;
     }
-    4.1% {
+    11.6% {
       opacity: 0;
       transform: translate3d(-54vw, 38vh, 0);
     }
@@ -257,7 +257,7 @@ const StyledSky = styled.div`
     1% {
       opacity: 0.85;
     }
-    3.6% {
+    10.2% {
       opacity: 0;
       transform: translate3d(-54vw, 38vh, 0);
     }
