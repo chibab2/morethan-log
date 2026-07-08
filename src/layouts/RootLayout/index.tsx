@@ -74,7 +74,7 @@ const RootLayout = ({ children }: Props) => {
       {hasLetter && (
         <StyledLetterDialog role="dialog" aria-modal="true">
           <div className="panel">
-            <p>별똥별이 편지를 전해 줬습니다. 열어 보시겠습니까?</p>
+            <p>별똥별이 편지를 전해 왔습니다. 열어 보시겠습니까?</p>
             <div className="actions">
               <button type="button" onClick={() => setHasLetter(false)}>
                 열어보기
@@ -95,7 +95,7 @@ export default RootLayout
 const StyledSky = styled.div`
   position: fixed;
   inset: 0;
-  z-index: 0;
+  z-index: 2;
   overflow: hidden;
   pointer-events: none;
 
@@ -128,6 +128,7 @@ const StyledSky = styled.div`
         transparent
       );
       clip-path: polygon(0 0, 100% 46%, 100% 54%, 0 100%);
+      pointer-events: none;
     }
 
     &:nth-of-type(1) {
