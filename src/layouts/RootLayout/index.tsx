@@ -56,13 +56,117 @@ const RootLayout = ({ children }: Props) => {
       <Scripts />
       {/* // TODO: replace react query */}
       {/* {metaConfig.type !== "Paper" && <Header />} */}
-      <Header fullWidth={false} />
-      <StyledMain>{children}</StyledMain>
+      <StyledSky aria-hidden="true">
+        {Array.from({ length: 5 }).map((_, index) => (
+          <span key={index} />
+        ))}
+      </StyledSky>
+      <StyledContent>
+        <Header fullWidth={false} />
+        <StyledMain>{children}</StyledMain>
+      </StyledContent>
     </ThemeProvider>
   )
 }
 
 export default RootLayout
+
+const StyledSky = styled.div`
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+
+  span {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    border-radius: 9999px;
+    background-color: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 0 2px rgba(255, 255, 255, 0.70);
+    opacity: 0;
+    transform: translate3d(0, 0, 0) rotate(-35deg);
+    animation-name: shootingStar;
+    animation-timing-function: ease-out;
+    animation-iteration-count: infinite;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 2px;
+      width: 96px;
+      height: 1px;
+      transform: translateY(-50%);
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.50)
+      );
+    }
+
+    &:nth-of-type(1) {
+      top: 12%;
+      left: 86%;
+      animation-duration: 2.4s;
+      animation-delay: 1.2s;
+    }
+
+    &:nth-of-type(2) {
+      top: 26%;
+      left: 104%;
+      width: 2px;
+      height: 2px;
+      animation-duration: 2.9s;
+      animation-delay: 7.4s;
+    }
+
+    &:nth-of-type(3) {
+      top: 44%;
+      left: 92%;
+      width: 4px;
+      height: 4px;
+      animation-duration: 2.2s;
+      animation-delay: 13.6s;
+    }
+
+    &:nth-of-type(4) {
+      top: 8%;
+      left: 64%;
+      width: 2px;
+      height: 2px;
+      animation-duration: 2.6s;
+      animation-delay: 18.8s;
+    }
+
+    &:nth-of-type(5) {
+      top: 62%;
+      left: 98%;
+      animation-duration: 2.7s;
+      animation-delay: 24.2s;
+    }
+  }
+
+  @keyframes shootingStar {
+    0% {
+      opacity: 0;
+      transform: translate3d(0, 0, 0) rotate(-35deg);
+    }
+    12% {
+      opacity: 0.85;
+    }
+    100% {
+      opacity: 0;
+      transform: translate3d(-54vw, 38vh, 0) rotate(-35deg);
+    }
+  }
+`
+
+const StyledContent = styled.div`
+  position: relative;
+  z-index: 1;
+`
 
 const StyledMain = styled.main`
   margin: 0 auto;
