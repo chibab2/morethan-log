@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect } from "react"
+import React, { ReactNode, useEffect, useState } from "react"
 import { ThemeProvider } from "./ThemeProvider"
 import useScheme from "src/hooks/useScheme"
 import Header from "./Header"
@@ -46,6 +46,7 @@ type Props = {
 
 const RootLayout = ({ children }: Props) => {
   const [scheme] = useScheme()
+  const [hasLetter, setHasLetter] = useState(false)
   useGtagEffect()
   useEffect(() => {
     Prism.highlightAll();
@@ -56,15 +57,35 @@ const RootLayout = ({ children }: Props) => {
       <Scripts />
       {/* // TODO: replace react query */}
       {/* {metaConfig.type !== "Paper" && <Header />} */}
-      <StyledSky aria-hidden="true">
+      <StyledSky>
         {Array.from({ length: 5 }).map((_, index) => (
-          <span key={index} />
+          <button
+            key={index}
+            type="button"
+            aria-label="별똥별 편지 열기"
+            onClick={() => setHasLetter(true)}
+          />
         ))}
       </StyledSky>
       <StyledContent>
         <Header fullWidth={false} />
         <StyledMain>{children}</StyledMain>
       </StyledContent>
+      {hasLetter && (
+        <StyledLetterDialog role="dialog" aria-modal="true">
+          <div className="panel">
+            <p>별똥별이 편지를 전해 줬습니다. 열어 보시겠습니까?</p>
+            <div className="actions">
+              <button type="button" onClick={() => setHasLetter(false)}>
+                열어보기
+              </button>
+              <button type="button" onClick={() => setHasLetter(false)}>
+                지나가기
+              </button>
+            </div>
+          </div>
+        </StyledLetterDialog>
+      )}
     </ThemeProvider>
   )
 }
@@ -78,14 +99,15 @@ const StyledSky = styled.div`
   overflow: hidden;
   pointer-events: none;
 
-  span {
+  button {
     position: absolute;
-    width: 15px;
-    height: 15px;
+    width: 8px;
+    height: 8px;
     border-radius: 9999px;
     background-color: rgba(255, 255, 255, 0.85);
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.70);
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.70);
     opacity: 0;
+    pointer-events: auto;
     transform: translate3d(0, 0, 0);
     animation-timing-function: ease-out;
     animation-iteration-count: infinite;
@@ -96,7 +118,7 @@ const StyledSky = styled.div`
       top: 50%;
       left: 50%;
       width: 168px;
-      height: 9px;
+      height: 6px;
       transform: translateY(-50%) rotate(-35deg);
       transform-origin: left center;
       background: linear-gradient(
@@ -119,8 +141,8 @@ const StyledSky = styled.div`
     &:nth-of-type(2) {
       top: 26%;
       left: 104%;
-      width: 14px;
-      height: 14px;
+      width: 6px;
+      height: 6px;
       animation-name: shootingStarSecond;
       animation-duration: 29s;
       animation-delay: 7.4s;
@@ -129,8 +151,8 @@ const StyledSky = styled.div`
     &:nth-of-type(3) {
       top: 44%;
       left: 92%;
-      width: 16px;
-      height: 16px;
+      width: 8px;
+      height: 8px;
       animation-name: shootingStarThird;
       animation-duration: 37s;
       animation-delay: 13.6s;
@@ -139,8 +161,8 @@ const StyledSky = styled.div`
     &:nth-of-type(4) {
       top: 8%;
       left: 64%;
-      width: 14px;
-      height: 14px;
+      width: 6px;
+      height: 6px;
       animation-name: shootingStarFourth;
       animation-duration: 43s;
       animation-delay: 18.8s;
@@ -163,7 +185,7 @@ const StyledSky = styled.div`
     1% {
       opacity: 0.85;
     }
-    15.2% {
+    7.6% {
       opacity: 0;
       transform: translate3d(-54vw, 38vh, 0);
     }
@@ -181,7 +203,7 @@ const StyledSky = styled.div`
     1% {
       opacity: 0.85;
     }
-    12.1% {
+    6.1% {
       opacity: 0;
       transform: translate3d(-54vw, 38vh, 0);
     }
@@ -199,7 +221,7 @@ const StyledSky = styled.div`
     1% {
       opacity: 0.85;
     }
-    9.5% {
+    4.7% {
       opacity: 0;
       transform: translate3d(-54vw, 38vh, 0);
     }
@@ -217,7 +239,7 @@ const StyledSky = styled.div`
     1% {
       opacity: 0.85;
     }
-    8.1% {
+    4.1% {
       opacity: 0;
       transform: translate3d(-54vw, 38vh, 0);
     }
@@ -235,7 +257,7 @@ const StyledSky = styled.div`
     1% {
       opacity: 0.85;
     }
-    7.1% {
+    3.6% {
       opacity: 0;
       transform: translate3d(-54vw, 38vh, 0);
     }
@@ -249,6 +271,52 @@ const StyledSky = styled.div`
 const StyledContent = styled.div`
   position: relative;
   z-index: 1;
+`
+
+const StyledLetterDialog = styled.div`
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background-color: rgba(3, 4, 10, 0.54);
+  backdrop-filter: blur(8px);
+
+  .panel {
+    width: min(100%, 360px);
+    padding: 1.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 12px;
+    background-color: rgba(8, 11, 24, 0.94);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.38);
+    color: rgba(248, 250, 252, 0.94);
+  }
+
+  p {
+    margin: 0 0 1rem;
+    line-height: 1.6;
+  }
+
+  .actions {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+  }
+
+  button {
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: rgba(248, 250, 252, 0.94);
+  }
+
+  button:hover {
+    background-color: rgba(255, 255, 255, 0.18);
+  }
 `
 
 const StyledMain = styled.main`
