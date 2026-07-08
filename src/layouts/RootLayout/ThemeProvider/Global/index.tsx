@@ -40,11 +40,21 @@ export const Global = () => {
           font-style: ${pretendard.style.fontStyle};
         }
 
-        body::before {
+        #__next {
+          position: relative;
+          z-index: 1;
+        }
+
+        body::before,
+        body::after {
           content: "";
           position: fixed;
           inset: 0;
           pointer-events: none;
+          z-index: 0;
+        }
+
+        body::before {
           background:
             radial-gradient(circle at 14% 36%, rgba(255, 255, 255, 0.11) 0 1px, transparent 4px),
             radial-gradient(circle at 24% 48%, rgba(255, 255, 255, 0.07) 0 1px, transparent 4px),
@@ -56,7 +66,45 @@ export const Global = () => {
             radial-gradient(circle at 38% 66%, rgba(255, 255, 255, 0.09) 0 1px, transparent 4px),
             radial-gradient(circle at 91% 68%, rgba(255, 255, 255, 0.12) 0 1px, transparent 4px);
           opacity: 0.9;
-          z-index: -1;
+          animation: starTwinkle 4.8s ease-in-out infinite alternate;
+        }
+
+        body::after {
+          background:
+            radial-gradient(circle at 6% 42%, rgba(255, 255, 255, 0.08) 0 1px, transparent 3px),
+            radial-gradient(circle at 17% 72%, rgba(255, 255, 255, 0.22) 0 1px, transparent 4px),
+            radial-gradient(circle at 34% 54%, rgba(255, 255, 255, 0.12) 0 1px, transparent 3px),
+            radial-gradient(circle at 47% 18%, rgba(255, 255, 255, 0.18) 0 1px, transparent 4px),
+            radial-gradient(circle at 59% 61%, rgba(255, 255, 255, 0.09) 0 1px, transparent 3px),
+            radial-gradient(circle at 73% 47%, rgba(255, 255, 255, 0.26) 0 1px, transparent 4px),
+            radial-gradient(circle at 82% 14%, rgba(255, 255, 255, 0.1) 0 1px, transparent 3px),
+            radial-gradient(circle at 94% 78%, rgba(255, 255, 255, 0.18) 0 1px, transparent 4px);
+          opacity: 0.56;
+          animation: starPulse 7.2s ease-in-out infinite alternate;
+        }
+
+        @keyframes starTwinkle {
+          0% {
+            opacity: 0.38;
+          }
+          45% {
+            opacity: 0.92;
+          }
+          100% {
+            opacity: 0.58;
+          }
+        }
+
+        @keyframes starPulse {
+          0% {
+            opacity: 0.18;
+          }
+          55% {
+            opacity: 0.7;
+          }
+          100% {
+            opacity: 0.34;
+          }
         }
 
         * {
