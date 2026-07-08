@@ -63,6 +63,7 @@ const RootLayout = ({ children }: Props) => {
             key={index}
             type="button"
             aria-label="별똥별 편지 열기"
+            data-wish={index === 2 ? "소원을 빌어보자" : undefined}
             onClick={() => setHasLetter(true)}
           />
         ))}
@@ -74,7 +75,7 @@ const RootLayout = ({ children }: Props) => {
       {hasLetter && (
         <StyledLetterDialog role="dialog" aria-modal="true">
           <div className="panel">
-            <p>별똥별이 편지를 전해 왔습니다. 열어 보시겠습니까?</p>
+            <p>별똥별이 편지를 전해 줬습니다. 열어 보시겠습니까?</p>
             <div className="actions">
               <button type="button" onClick={() => setHasLetter(false)}>
                 열어보기
@@ -95,7 +96,7 @@ export default RootLayout
 const StyledSky = styled.div`
   position: fixed;
   inset: 0;
-  z-index: 2;
+  z-index: 0;
   overflow: hidden;
   pointer-events: none;
 
@@ -128,6 +129,24 @@ const StyledSky = styled.div`
         transparent
       );
       clip-path: polygon(0 0, 100% 46%, 100% 54%, 0 100%);
+    }
+
+    &[data-wish]::after {
+      content: attr(data-wish);
+      position: absolute;
+      left: 50%;
+      bottom: calc(100% + 0.5rem);
+      min-width: max-content;
+      padding: 0.35rem 0.55rem;
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 8px;
+      background-color: rgba(8, 11, 24, 0.86);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
+      color: rgba(248, 250, 252, 0.94);
+      font-size: 0.75rem;
+      line-height: 1rem;
+      transform: translateX(-50%);
+      animation: wishBubble 296s ease-in-out infinite;
       pointer-events: none;
     }
 
@@ -186,7 +205,7 @@ const StyledSky = styled.div`
     1% {
       opacity: 0.85;
     }
-    21.7% {
+    7.6% {
       opacity: 0;
       transform: translate3d(-54vw, 38vh, 0);
     }
@@ -204,7 +223,7 @@ const StyledSky = styled.div`
     1% {
       opacity: 0.85;
     }
-    17.2% {
+    6.1% {
       opacity: 0;
       transform: translate3d(-54vw, 38vh, 0);
     }
@@ -222,7 +241,7 @@ const StyledSky = styled.div`
     1% {
       opacity: 0.85;
     }
-    13.5% {
+    4.7% {
       opacity: 0;
       transform: translate3d(-54vw, 38vh, 0);
     }
@@ -240,7 +259,7 @@ const StyledSky = styled.div`
     1% {
       opacity: 0.85;
     }
-    11.6% {
+    4.1% {
       opacity: 0;
       transform: translate3d(-54vw, 38vh, 0);
     }
@@ -258,13 +277,25 @@ const StyledSky = styled.div`
     1% {
       opacity: 0.85;
     }
-    10.2% {
+    3.6% {
       opacity: 0;
       transform: translate3d(-54vw, 38vh, 0);
     }
     100% {
       opacity: 0;
       transform: translate3d(-54vw, 38vh, 0);
+    }
+  }
+
+  @keyframes wishBubble {
+    0%,
+    87%,
+    100% {
+      opacity: 0;
+    }
+    88%,
+    89.8% {
+      opacity: 1;
     }
   }
 `
