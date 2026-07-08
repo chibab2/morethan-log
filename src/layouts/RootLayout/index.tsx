@@ -80,13 +80,13 @@ const StyledSky = styled.div`
 
   span {
     position: absolute;
-    width: 7px;
-    height: 7px;
+    width: 15px;
+    height: 15px;
     border-radius: 9999px;
     background-color: rgba(255, 255, 255, 0.85);
-    box-shadow: 0 0 2px rgba(255, 255, 255, 0.70);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.70);
     opacity: 0;
-    transform: translate3d(0, 0, 0) rotate(35deg);
+    transform: translate3d(0, 0, 0);
     animation-timing-function: ease-out;
     animation-iteration-count: infinite;
 
@@ -94,15 +94,18 @@ const StyledSky = styled.div`
       content: "";
       position: absolute;
       top: 50%;
-      left: 4px;
-      width: 96px;
-      height: 1px;
-      transform: translateY(-50%);
+      left: 50%;
+      width: 168px;
+      height: 9px;
+      transform: translateY(-50%) rotate(-35deg);
+      transform-origin: left center;
       background: linear-gradient(
-        270deg,
-        transparent,
-        rgba(255, 255, 255, 0.50)
+        90deg,
+        rgba(255, 255, 255, 0.70),
+        rgba(255, 255, 255, 0.50) 32%,
+        transparent
       );
+      clip-path: polygon(0 0, 100% 46%, 100% 54%, 0 100%);
     }
 
     &:nth-of-type(1) {
@@ -116,8 +119,8 @@ const StyledSky = styled.div`
     &:nth-of-type(2) {
       top: 26%;
       left: 104%;
-      width: 6px;
-      height: 6px;
+      width: 14px;
+      height: 14px;
       animation-name: shootingStarSecond;
       animation-duration: 29s;
       animation-delay: 7.4s;
@@ -126,8 +129,8 @@ const StyledSky = styled.div`
     &:nth-of-type(3) {
       top: 44%;
       left: 92%;
-      width: 8px;
-      height: 8px;
+      width: 16px;
+      height: 16px;
       animation-name: shootingStarThird;
       animation-duration: 37s;
       animation-delay: 13.6s;
@@ -136,8 +139,8 @@ const StyledSky = styled.div`
     &:nth-of-type(4) {
       top: 8%;
       left: 64%;
-      width: 6px;
-      height: 6px;
+      width: 14px;
+      height: 14px;
       animation-name: shootingStarFourth;
       animation-duration: 43s;
       animation-delay: 18.8s;
@@ -155,90 +158,90 @@ const StyledSky = styled.div`
   @keyframes shootingStarFirst {
     0% {
       opacity: 0;
-      transform: translate3d(0, 0, 0) rotate(35deg);
+      transform: translate3d(0, 0, 0);
     }
     1% {
       opacity: 0.85;
     }
-    10% {
+    15.2% {
       opacity: 0;
-      transform: translate3d(-54vw, 38vh, 0) rotate(35deg);
+      transform: translate3d(-54vw, 38vh, 0);
     }
     100% {
       opacity: 0;
-      transform: translate3d(-54vw, 38vh, 0) rotate(35deg);
+      transform: translate3d(-54vw, 38vh, 0);
     }
   }
 
   @keyframes shootingStarSecond {
     0% {
       opacity: 0;
-      transform: translate3d(0, 0, 0) rotate(35deg);
+      transform: translate3d(0, 0, 0);
     }
     1% {
       opacity: 0.85;
     }
-    9% {
+    12.1% {
       opacity: 0;
-      transform: translate3d(-54vw, 38vh, 0) rotate(35deg);
+      transform: translate3d(-54vw, 38vh, 0);
     }
     100% {
       opacity: 0;
-      transform: translate3d(-54vw, 38vh, 0) rotate(35deg);
+      transform: translate3d(-54vw, 38vh, 0);
     }
   }
 
   @keyframes shootingStarThird {
     0% {
       opacity: 0;
-      transform: translate3d(0, 0, 0) rotate(35deg);
+      transform: translate3d(0, 0, 0);
     }
     1% {
       opacity: 0.85;
     }
-    7.6% {
+    9.5% {
       opacity: 0;
-      transform: translate3d(-54vw, 38vh, 0) rotate(35deg);
+      transform: translate3d(-54vw, 38vh, 0);
     }
     100% {
       opacity: 0;
-      transform: translate3d(-54vw, 38vh, 0) rotate(35deg);
+      transform: translate3d(-54vw, 38vh, 0);
     }
   }
 
   @keyframes shootingStarFourth {
     0% {
       opacity: 0;
-      transform: translate3d(0, 0, 0) rotate(35deg);
+      transform: translate3d(0, 0, 0);
     }
     1% {
       opacity: 0.85;
     }
-    6% {
+    8.1% {
       opacity: 0;
-      transform: translate3d(-54vw, 38vh, 0) rotate(35deg);
+      transform: translate3d(-54vw, 38vh, 0);
     }
     100% {
       opacity: 0;
-      transform: translate3d(-54vw, 38vh, 0) rotate(35deg);
+      transform: translate3d(-54vw, 38vh, 0);
     }
   }
 
   @keyframes shootingStarFifth {
     0% {
       opacity: 0;
-      transform: translate3d(0, 0, 0) rotate(35deg);
+      transform: translate3d(0, 0, 0);
     }
     1% {
       opacity: 0.85;
     }
-    5.8% {
+    7.1% {
       opacity: 0;
-      transform: translate3d(-54vw, 38vh, 0) rotate(35deg);
+      transform: translate3d(-54vw, 38vh, 0);
     }
     100% {
       opacity: 0;
-      transform: translate3d(-54vw, 38vh, 0) rotate(35deg);
+      transform: translate3d(-54vw, 38vh, 0);
     }
   }
 `
