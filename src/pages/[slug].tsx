@@ -6,9 +6,8 @@ import CustomError from "src/routes/Error"
 import { getRecordMap, getPosts } from "src/apis"
 import MetaConfig from "src/components/MetaConfig"
 import { GetStaticProps } from "next"
-import { queryClient } from "src/libs/react-query"
 import { queryKey } from "src/constants/queryKey"
-import { dehydrate } from "@tanstack/react-query"
+import { dehydrate, QueryClient } from "@tanstack/react-query"
 import usePostQuery from "src/hooks/usePostQuery"
 import { FilterPostsOptions } from "src/libs/utils/notion/filterPosts"
 
@@ -28,7 +27,9 @@ export const getStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const slug = context.params?.slug
+  const rawSlug = context.params?.slug
+  const slug = Array.isArray(rawSlug) ? rawSlug[0] : rawSlug
+  const queryClient = new QueryClient()
 
   const posts = await getPosts()
   const feedPosts = filterPosts(posts)
@@ -36,6 +37,13 @@ export const getStaticProps: GetStaticProps = async (context) => {
 
   const detailPosts = filterPosts(posts, filter)
   const postDetail = detailPosts.find((t: any) => t.slug === slug)
+  if (!postDetail) {
+    return {
+      notFound: true,
+      revalidate: CONFIG.revalidateTime,
+    }
+  }
+
   const recordMap = await getRecordMap(postDetail?.id!)
 
   await queryClient.prefetchQuery(queryKey.post(`${slug}`), () => ({

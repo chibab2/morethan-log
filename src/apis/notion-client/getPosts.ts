@@ -6,6 +6,27 @@ import getAllPageIds from "src/libs/utils/notion/getAllPageIds"
 import getPageProperties from "src/libs/utils/notion/getPageProperties"
 import { TPosts } from "src/types"
 
+const ensureUniqueSlugs = (posts: any[]) => {
+  const slugCounts = posts.reduce((counts, post) => {
+    const slug = `${post.slug || ""}`.trim()
+    if (!slug) return counts
+
+    counts.set(slug, (counts.get(slug) || 0) + 1)
+    return counts
+  }, new Map<string, number>())
+
+  return posts.map((post) => {
+    const slug = `${post.slug || ""}`.trim()
+    if ((slugCounts.get(slug) || 0) <= 1) return post
+
+    const shortId = `${post.id}`.replace(/-/g, "").slice(0, 8)
+    return {
+      ...post,
+      slug: `${slug}-${shortId}`,
+    }
+  })
+}
+
 /**
  * @param {{ includePages: boolean }} - false: posts only / true: include pages
  */
@@ -49,14 +70,16 @@ export const getPosts = async () => {
       data.push(properties)
     }
 
+    const uniqueSlugData = ensureUniqueSlugs(data)
+
     // Sort by date
-    data.sort((a: any, b: any) => {
+    uniqueSlugData.sort((a: any, b: any) => {
       const dateA: any = new Date(a?.date?.start_date || a.createdTime)
       const dateB: any = new Date(b?.date?.start_date || b.createdTime)
       return dateB - dateA
     })
 
-    const posts = data as TPosts
+    const posts = uniqueSlugData as TPosts
     return posts
   }
 }
