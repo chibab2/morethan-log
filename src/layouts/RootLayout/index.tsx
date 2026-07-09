@@ -102,8 +102,8 @@ const StyledSky = styled.div`
 
   button {
     position: absolute;
-    width: 8px;
-    height: 8px;
+    width: 4px;
+    height: 4px;
     border-radius: 9999px;
     background: radial-gradient(
       circle,
@@ -112,7 +112,7 @@ const StyledSky = styled.div`
       rgba(255, 255, 255, 0.52) 72%,
       rgba(255, 255, 255, 0) 100%
     );
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.45);
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.45);
     opacity: 0;
     pointer-events: auto;
     transform: translate3d(0, 0, 0);
@@ -123,9 +123,9 @@ const StyledSky = styled.div`
       content: "";
       position: absolute;
       top: 50%;
-      left: 2px;
-      width: 176px;
-      height: 10px;
+      left: 1px;
+      width: 88px;
+      height: 5px;
       transform: translateY(-50%) rotate(-18deg);
       transform-origin: left center;
       background: linear-gradient(
@@ -136,7 +136,7 @@ const StyledSky = styled.div`
         rgba(255, 255, 255, 0) 100%
       );
       border-radius: 9999px;
-      filter: blur(0.6px);
+      filter: blur(0.3px);
     }
 
     &[data-wish]::after {
@@ -169,8 +169,8 @@ const StyledSky = styled.div`
     &:nth-of-type(2) {
       top: 26%;
       left: 104%;
-      width: 6px;
-      height: 6px;
+      width: 3px;
+      height: 3px;
       animation-name: shootingStarSecond;
       animation-duration: 29s;
       animation-delay: 7.4s;
@@ -179,8 +179,8 @@ const StyledSky = styled.div`
     &:nth-of-type(3) {
       top: 44%;
       left: 92%;
-      width: 8px;
-      height: 8px;
+      width: 4px;
+      height: 4px;
       animation-name: shootingStarThird;
       animation-duration: 37s;
       animation-delay: 13.6s;
@@ -189,8 +189,8 @@ const StyledSky = styled.div`
     &:nth-of-type(4) {
       top: 8%;
       left: 64%;
-      width: 6px;
-      height: 6px;
+      width: 3px;
+      height: 3px;
       animation-name: shootingStarFourth;
       animation-duration: 43s;
       animation-delay: 18.8s;
