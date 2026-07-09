@@ -60,7 +60,7 @@ const StyledWrapper = styled.nav`
 
   .item {
     display: flex;
-    min-height: 5rem;
+    min-height: 4rem;
     padding: 0.875rem;
     flex-direction: column;
     justify-content: center;
