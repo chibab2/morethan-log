@@ -124,7 +124,7 @@ const StyledSky = styled.div`
       position: absolute;
       top: 50%;
       left: 1px;
-      width: 88px;
+      width: 400px;
       height: 5px;
       transform: translateY(-50%) rotate(-18deg);
       transform-origin: left center;
@@ -162,8 +162,8 @@ const StyledSky = styled.div`
       top: 12%;
       left: 86%;
       animation-name: shootingStarFirst;
-      animation-duration: 23s;
-      animation-delay: 1.2s;
+      animation-duration: 69s;
+      animation-delay: 3.6s;
     }
 
     &:nth-of-type(2) {
@@ -172,8 +172,8 @@ const StyledSky = styled.div`
       width: 3px;
       height: 3px;
       animation-name: shootingStarSecond;
-      animation-duration: 29s;
-      animation-delay: 7.4s;
+      animation-duration: 87s;
+      animation-delay: 22.2s;
     }
 
     &:nth-of-type(3) {
@@ -182,8 +182,8 @@ const StyledSky = styled.div`
       width: 4px;
       height: 4px;
       animation-name: shootingStarThird;
-      animation-duration: 37s;
-      animation-delay: 13.6s;
+      animation-duration: 111s;
+      animation-delay: 40.8s;
     }
 
     &:nth-of-type(4) {
@@ -192,16 +192,16 @@ const StyledSky = styled.div`
       width: 3px;
       height: 3px;
       animation-name: shootingStarFourth;
-      animation-duration: 43s;
-      animation-delay: 18.8s;
+      animation-duration: 129s;
+      animation-delay: 56.4s;
     }
 
     &:nth-of-type(5) {
       top: 62%;
       left: 98%;
       animation-name: shootingStarFifth;
-      animation-duration: 49s;
-      animation-delay: 24.2s;
+      animation-duration: 147s;
+      animation-delay: 72.6s;
     }
   }
 
@@ -210,16 +210,16 @@ const StyledSky = styled.div`
       opacity: 0;
       transform: translate3d(0, 0, 0);
     }
-    1% {
+    0.33% {
       opacity: 0.85;
     }
-    7.6% {
+    3.26% {
       opacity: 0;
-      transform: translate3d(-80vw, 26vh, 0);
+      transform: translate3d(-120vw, 39vh, 0);
     }
     100% {
       opacity: 0;
-      transform: translate3d(-80vw, 26vh, 0);
+      transform: translate3d(-120vw, 39vh, 0);
     }
   }
 
@@ -228,16 +228,16 @@ const StyledSky = styled.div`
       opacity: 0;
       transform: translate3d(0, 0, 0);
     }
-    1% {
+    0.33% {
       opacity: 0.85;
     }
-    6.1% {
+    2.61% {
       opacity: 0;
-      transform: translate3d(-80vw, 26vh, 0);
+      transform: translate3d(-120vw, 39vh, 0);
     }
     100% {
       opacity: 0;
-      transform: translate3d(-80vw, 26vh, 0);
+      transform: translate3d(-120vw, 39vh, 0);
     }
   }
 
@@ -246,16 +246,16 @@ const StyledSky = styled.div`
       opacity: 0;
       transform: translate3d(0, 0, 0);
     }
-    1% {
+    0.33% {
       opacity: 0.85;
     }
-    4.7% {
+    2.02% {
       opacity: 0;
-      transform: translate3d(-80vw, 26vh, 0);
+      transform: translate3d(-120vw, 39vh, 0);
     }
     100% {
       opacity: 0;
-      transform: translate3d(-80vw, 26vh, 0);
+      transform: translate3d(-120vw, 39vh, 0);
     }
   }
 
@@ -264,16 +264,16 @@ const StyledSky = styled.div`
       opacity: 0;
       transform: translate3d(0, 0, 0);
     }
-    1% {
+    0.33% {
       opacity: 0.85;
     }
-    4.1% {
+    1.76% {
       opacity: 0;
-      transform: translate3d(-80vw, 26vh, 0);
+      transform: translate3d(-120vw, 39vh, 0);
     }
     100% {
       opacity: 0;
-      transform: translate3d(-80vw, 26vh, 0);
+      transform: translate3d(-120vw, 39vh, 0);
     }
   }
 
@@ -282,16 +282,16 @@ const StyledSky = styled.div`
       opacity: 0;
       transform: translate3d(0, 0, 0);
     }
-    1% {
+    0.33% {
       opacity: 0.85;
     }
-    3.6% {
+    1.54% {
       opacity: 0;
-      transform: translate3d(-80vw, 26vh, 0);
+      transform: translate3d(-120vw, 39vh, 0);
     }
     100% {
       opacity: 0;
-      transform: translate3d(-80vw, 26vh, 0);
+      transform: translate3d(-120vw, 39vh, 0);
     }
   }
 
