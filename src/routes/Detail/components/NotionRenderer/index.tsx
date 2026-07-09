@@ -79,7 +79,7 @@ const NotionRenderer: FC<Props> = ({ recordMap }) => {
 export default NotionRenderer
 
 const StyledWrapper = styled.div`
-  --bg-color: #111827;
+  --bg-color: rgba(17, 24, 39, 0.8);
   --bg-color-0: rgba(255, 255, 255, 0.08);
   --bg-color-1: rgba(255, 255, 255, 0.1);
   --bg-color-2: rgba(255, 255, 255, 0.12);
@@ -95,8 +95,8 @@ const StyledWrapper = styled.div`
   .notion-page,
   .notion-page-content,
   .notion-page-content-inner {
-    --bg-color: #111827;
-    background: #111827 !important;
+    --bg-color: rgba(17, 24, 39, 0.8);
+    background: rgba(17, 24, 39, 0.8) !important;
   }
   .notion-page {
     padding: 0;
