@@ -5,13 +5,17 @@ import {
   AiOutlineGithub,
   AiOutlineInstagram,
   AiOutlineMail,
+  AiOutlinePhone,
 } from "react-icons/ai"
 import { CONFIG } from "site.config"
 
 const ContactCard: React.FC = () => {
   return (
     <>
-      <StyledTitle>Contact</StyledTitle>
+      <StyledTitle>
+        <AiOutlinePhone className="title-icon" />
+        <span>Contact</span>
+      </StyledTitle>
       <StyledWrapper>
         {CONFIG.profile.github && (
           <a
@@ -62,8 +66,15 @@ const ContactCard: React.FC = () => {
 export default ContactCard
 
 const StyledTitle = styled.div`
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
   padding: 0.25rem;
   margin-bottom: 0.75rem;
+
+  .title-icon {
+    font-size: 1rem;
+  }
 `
 const StyledWrapper = styled.div`
   display: flex;

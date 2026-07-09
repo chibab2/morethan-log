@@ -1,13 +1,16 @@
 import { CONFIG } from "site.config"
 import React from "react"
-import { AiFillCodeSandboxCircle } from "react-icons/ai"
+import { AiFillCodeSandboxCircle, AiOutlineAppstore } from "react-icons/ai"
 import styled from "@emotion/styled"
 
 const ServiceCard: React.FC = () => {
   if (!CONFIG.projects) return null
   return (
     <>
-      <StyledTitle>Service</StyledTitle>
+      <StyledTitle>
+        <AiOutlineAppstore className="title-icon" />
+        <span>Service</span>
+      </StyledTitle>
       <StyledWrapper>
         {CONFIG.projects.map((project, idx) => (
           <a
@@ -28,8 +31,15 @@ const ServiceCard: React.FC = () => {
 export default ServiceCard
 
 const StyledTitle = styled.div`
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
   padding: 0.25rem;
   margin-bottom: 0.75rem;
+
+  .title-icon {
+    font-size: 1rem;
+  }
 `
 
 const StyledWrapper = styled.div`

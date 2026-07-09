@@ -8,6 +8,18 @@ async function getPageProperties(
   block: BlockMap,
   schema: CollectionPropertySchemaMap
 ) {
+  const sanitizeUserName = (value?: string) => {
+    if (!value) return undefined
+
+    const trimmed = String(value).trim()
+    if (!trimmed) return undefined
+
+    const normalized = trimmed.toLowerCase().replace(/\s+/g, "")
+    if (normalized.replace(/undefined/g, "") === "") return undefined
+
+    return trimmed
+  }
+
   const api = new NotionAPI()
   const blockEntry = block?.[id]?.value as any
   const blockValue = blockEntry?.value ?? blockEntry
@@ -62,11 +74,14 @@ async function getPageProperties(
               const res: any = await api.getUsers(userId)
               const resValue =
                 res?.recordMapWithRoles?.notion_user?.[userId[1]]?.value
+              const fullName = [resValue?.family_name, resValue?.given_name]
+                .filter(Boolean)
+                .join("")
               const user = {
                 id: resValue?.id,
                 name:
-                  resValue?.name ||
-                  `${resValue?.family_name}${resValue?.given_name}` ||
+                  sanitizeUserName(resValue?.name) ||
+                  sanitizeUserName(fullName) ||
                   undefined,
                 profile_photo: resValue?.profile_photo || null,
               }

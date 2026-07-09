@@ -1,6 +1,7 @@
 import styled from "@emotion/styled"
 import { useRouter } from "next/router"
 import React from "react"
+import { AiOutlineTags } from "react-icons/ai"
 import { useTagsQuery } from "src/hooks/useTagsQuery"
 
 type Props = {}
@@ -30,7 +31,10 @@ const TagList: React.FC<Props> = () => {
 
   return (
     <StyledWrapper>
-      <div className="top">Tags</div>
+      <div className="top">
+        <AiOutlineTags className="icon" />
+        <span>Tags</span>
+      </div>
       <div className="list">
         {Object.keys(data).map((key) => (
           <a
@@ -51,11 +55,17 @@ export default TagList
 const StyledWrapper = styled.div`
   .top {
     display: none;
+    gap: 0.5rem;
+    align-items: center;
     padding: 0.25rem;
     margin-bottom: 0.75rem;
 
     @media (min-width: 1024px) {
-      display: block;
+      display: flex;
+    }
+
+    .icon {
+      font-size: 1rem;
     }
   }
 

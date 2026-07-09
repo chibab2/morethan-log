@@ -1,12 +1,16 @@
 import styled from "@emotion/styled"
 import React, { InputHTMLAttributes } from "react"
+import { AiOutlineSearch } from "react-icons/ai"
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {}
 
 const SearchInput: React.FC<Props> = ({ ...props }) => {
   return (
     <StyledWrapper>
-      <div className="top">Search</div>
+      <div className="top">
+        <AiOutlineSearch className="icon" />
+        <span>Search</span>
+      </div>
       <input
         className="mid"
         type="text"
@@ -26,8 +30,15 @@ const StyledWrapper = styled.div`
     margin-bottom: 2rem;
   }
   > .top {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
     padding: 0.25rem;
     margin-bottom: 0.75rem;
+
+    .icon {
+      font-size: 1rem;
+    }
   }
   > .mid {
     padding-top: 0.5rem;

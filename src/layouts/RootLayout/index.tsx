@@ -105,8 +105,14 @@ const StyledSky = styled.div`
     width: 8px;
     height: 8px;
     border-radius: 9999px;
-    background-color: rgba(255, 255, 255, 0.85);
-    box-shadow: 0 0 6px rgba(255, 255, 255, 0.70);
+    background: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.98) 0%,
+      rgba(255, 255, 255, 0.92) 38%,
+      rgba(255, 255, 255, 0.52) 72%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.45);
     opacity: 0;
     pointer-events: auto;
     transform: translate3d(0, 0, 0);
@@ -117,18 +123,20 @@ const StyledSky = styled.div`
       content: "";
       position: absolute;
       top: 50%;
-      left: 50%;
-      width: 168px;
-      height: 6px;
+      left: 2px;
+      width: 176px;
+      height: 10px;
       transform: translateY(-50%) rotate(-18deg);
       transform-origin: left center;
       background: linear-gradient(
         90deg,
-        rgba(255, 255, 255, 0.70),
-        rgba(255, 255, 255, 0.50) 32%,
-        transparent
+        rgba(255, 255, 255, 0.92) 0%,
+        rgba(255, 255, 255, 0.58) 18%,
+        rgba(255, 255, 255, 0.22) 58%,
+        rgba(255, 255, 255, 0) 100%
       );
-      clip-path: polygon(0 0, 100% 46%, 100% 54%, 0 100%);
+      border-radius: 9999px;
+      filter: blur(0.6px);
     }
 
     &[data-wish]::after {

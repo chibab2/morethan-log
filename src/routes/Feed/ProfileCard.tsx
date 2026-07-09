@@ -1,6 +1,7 @@
 import styled from "@emotion/styled"
 import Image from "next/image"
 import React from "react"
+import { AiOutlineUser } from "react-icons/ai"
 import { CONFIG } from "site.config"
 
 type Props = {}
@@ -8,7 +9,10 @@ type Props = {}
 const ProfileCard: React.FC<Props> = () => {
   return (
     <StyledWrapper>
-      <div className="title">Profile</div>
+      <div className="title">
+        <AiOutlineUser className="icon" />
+        <span>Profile</span>
+      </div>
       <div className="content">
         <div className="top">
           <Image src={CONFIG.profile.image} fill alt="" />
@@ -27,8 +31,15 @@ export default ProfileCard
 
 const StyledWrapper = styled.div`
   > .title {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
     padding: 0.25rem;
     margin-bottom: 0.75rem;
+
+    .icon {
+      font-size: 1rem;
+    }
   }
   > .content {
     margin-bottom: 2.25rem;

@@ -10,24 +10,40 @@ type Props = {
   data: TPost
 }
 
+const getAuthorName = (name?: string) => {
+  if (!name) return CONFIG.profile.name
+
+  const trimmed = String(name).trim()
+  const normalized = trimmed.toLowerCase().replace(/\s+/g, "")
+
+  if (!trimmed || normalized.replace(/undefined/g, "") === "") {
+    return CONFIG.profile.name
+  }
+
+  return trimmed
+}
+
 const PostHeader: React.FC<Props> = ({ data }) => {
+  const author = data.author?.[0]
+  const authorName = getAuthorName(author?.name)
+
   return (
     <StyledWrapper>
       <h1 className="title">{data.title}</h1>
       {data.type[0] !== "Paper" && (
         <nav>
           <div className="top">
-            {data.author && data.author[0] && data.author[0].name && (
+            {authorName && (
               <>
                 <div className="author">
                   <Image
                     css={{ borderRadius: "50%" }}
-                    src={data.author[0].profile_photo || CONFIG.profile.image}
+                    src={author?.profile_photo || CONFIG.profile.image}
                     alt="profile_photo"
                     width={24}
                     height={24}
                   />
-                  <div className="">{data.author[0].name}</div>
+                  <div className="">{authorName}</div>
                 </div>
                 <div className="hr"></div>
               </>

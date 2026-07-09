@@ -79,9 +79,24 @@ const NotionRenderer: FC<Props> = ({ recordMap }) => {
 export default NotionRenderer
 
 const StyledWrapper = styled.div`
+  --bg-color: #111827;
+  --bg-color-0: rgba(255, 255, 255, 0.08);
+  --bg-color-1: rgba(255, 255, 255, 0.1);
+  --bg-color-2: rgba(255, 255, 255, 0.12);
+
   /* // TODO: why render? */
   .notion-collection-page-properties {
     display: none !important;
+  }
+  .notion,
+  .notion-app,
+  .notion-frame,
+  .notion-page-scroller,
+  .notion-page,
+  .notion-page-content,
+  .notion-page-content-inner {
+    --bg-color: #111827;
+    background: #111827 !important;
   }
   .notion-page {
     padding: 0;
