@@ -6,6 +6,7 @@ import Category from "src/components/Category"
 import styled from "@emotion/styled"
 import NotionRenderer from "../components/NotionRenderer"
 import usePostQuery from "src/hooks/usePostQuery"
+import PostNavigation from "./PostNavigation"
 
 type Props = {}
 
@@ -30,6 +31,7 @@ const PostDetail: React.FC<Props> = () => {
         <div>
           <NotionRenderer recordMap={data.recordMap} />
         </div>
+        {data.type[0] === "Post" && <PostNavigation currentPost={data} />}
         {data.type[0] === "Post" && (
           <>
             <Footer />

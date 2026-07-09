@@ -205,6 +205,59 @@ const StyledSky = styled.div`
     }
   }
 
+  @media (max-width: 768px) {
+    button {
+      animation-name: shootingStarMobile !important;
+    }
+
+    button::before {
+      width: 260px;
+    }
+
+    button:nth-of-type(1) {
+      top: 14%;
+      left: 118%;
+    }
+
+    button:nth-of-type(2) {
+      top: 30%;
+      left: 128%;
+    }
+
+    button:nth-of-type(3) {
+      top: 46%;
+      left: 122%;
+    }
+
+    button:nth-of-type(4) {
+      top: 10%;
+      left: 112%;
+    }
+
+    button:nth-of-type(5) {
+      top: 66%;
+      left: 126%;
+    }
+  }
+
+  @keyframes shootingStarMobile {
+    0% {
+      opacity: 0;
+      transform: translate3d(0, 0, 0);
+    }
+    0.33% {
+      opacity: 0.85;
+    }
+    3% {
+      opacity: 0;
+      transform: translate3d(-180vw, 58vh, 0);
+    }
+    100% {
+      opacity: 0;
+      transform: translate3d(-180vw, 58vh, 0);
+    }
+  }
+
   @keyframes shootingStarFirst {
     0% {
       opacity: 0;
