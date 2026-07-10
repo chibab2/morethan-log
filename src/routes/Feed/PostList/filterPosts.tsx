@@ -14,7 +14,7 @@ export function filterPosts({
   q,
   tag = undefined,
   category = DEFAULT_CATEGORY,
-  order = "desc",
+  order = "asc",
 }: FilterPostsParams): TPost[] {
   return posts
     .filter((post) => {
